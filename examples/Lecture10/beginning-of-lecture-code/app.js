@@ -4,6 +4,8 @@
 angular.module('DIApp', [])
 .controller('DIController', DIController);
 
+
+DIController.$inject = ['$scope', '$filter'];
 function DIController ($scope, $filter) {
   $scope.name = "Yaakov";
 
@@ -14,3 +16,5 @@ function DIController ($scope, $filter) {
 }
 
 })();
+
+

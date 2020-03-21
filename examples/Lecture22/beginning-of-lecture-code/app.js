@@ -3,7 +3,14 @@
 
 angular.module('ShoppingListApp', [])
 .controller('ShoppingListController', ShoppingListController)
-.provider('ShoppingListService', ShoppingListServiceProvider);
+.provider('ShoppingListService', ShoppingListServiceProvider)
+.config(Config);
+
+Config.$inject = ['ShoppingListServiceProvider'];
+function Config(ShoppingListServiceProvider) {
+  //save yakkov from himself
+  ShoppingListServiceProvider.defaults.maxItems = 2;
+}
 
 ShoppingListController.$inject = ['ShoppingListService'];
 function ShoppingListController(ShoppingListService) {
