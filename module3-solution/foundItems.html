@@ -1,0 +1,8 @@
+
+<ol>
+	<li ng-repeat = 'item in narrow.found' class="ng-scope">
+		{{ item }}
+		<button ng-click = "narrow.removeItem({index: $index});">Don't want this one!</button>
+	</li>
+	<!-- {{narrow.found}} -->
+</ol>
