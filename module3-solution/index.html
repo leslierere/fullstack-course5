@@ -18,13 +18,20 @@
     <!-- <div>{{narrow.searchTerm}}</div> -->
     <div class="form-group narrow-button">
         <button ng-click='narrow.getItems(narrow.searchTerm)'>Narrow It Down For Me!</button>
-        <found-items 
+        
+    </div>
+    <div>
+      <br>
+      <br>
+      <found-items 
           items="narrow.found"
           on-remove = "narrow.removeItem(index)"
           >
           
         </found-items>
+      <div ng-show="narrow.found.length===0" class="error">Nothing matched!</div>
     </div>
+    
   
 
     <!-- found-items should be implemented as a component -->

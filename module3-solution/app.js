@@ -43,7 +43,7 @@ function NarrowItDownController(MenuSearchService, $scope) {
 
 	narrow.removeItem = function (itemIndex) {
 		// console.log("removeItem:", narrow.found);
-	    narrow.found.splice(itemIndex,1);
+	    narrow.items.splice(itemIndex,1);
 	    // return narrow.found;
   	};
   	// console.log("Info inside:", narrow.found);
@@ -66,9 +66,10 @@ function MenuSearchService($http){
 		    var foundItems = [];
 		    // console.log("searchTerm in service:",searchTerm);
 		    for (var i = 0; i < response.data.menu_items.length; i++) {
-		    	var name = response.data.menu_items[i].name;
+		    	var item = response.data.menu_items[i];
+		    	var name = item.name;
 		    	if (!(response.data.menu_items[i].name.toLowerCase().indexOf(searchTerm) === -1)) {
-		    		foundItems.push(name);
+		    		foundItems.push(item);
 		    	}
 		    }
 		    // console.log(foundItems);
